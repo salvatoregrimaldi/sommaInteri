@@ -6,6 +6,7 @@
 package sommainteri;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -20,21 +21,22 @@ public class SommaInteri {
     public static void main(String[] args) {
         Integer a = 0;
         Integer b = 0;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter first number : ");
-        try {
-            a = Integer.parseInt(br.readLine());
-        }catch(Exception e) {
-            System.out.println(e);
-        }
-        System.out.print("Enter second number : ");
-        try {
-        b = Integer.parseInt(br.readLine());
-        }catch(Exception e) {
-            System.out.println(e);
-        }
+        a = insertNumber(a);
+        b = insertNumber(b);
         a += b;
         System.out.println("La somma è: " +a);
+    }
+    
+    
+    static private Integer insertNumber(Integer x){
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter number : ");
+        try {
+            x = Integer.parseInt(br.readLine());
+        }catch(IOException | NumberFormatException e) {
+            System.out.println(e);
+        }
+        return x;
     }
     
 }
