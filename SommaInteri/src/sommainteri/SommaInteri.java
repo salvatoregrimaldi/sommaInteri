@@ -36,6 +36,7 @@ public class SommaInteri {
         }catch(IOException | NumberFormatException e) {
             System.out.println(e);
         }
+        System.out.println("Sono Michelangelo Scrollalanza!!!");
         return x;
     }
     
